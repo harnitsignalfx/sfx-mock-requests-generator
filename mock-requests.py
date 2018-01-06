@@ -5,11 +5,10 @@ import os
 
 async def main():
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
-	
-	target = 'http://localhost:8901'
-	if (os.environ['TARGET_ADDRESS']
-		target = os.environ['TARGET_ADDRESS']
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:	
+    	target = 'http://localhost:8901'
+	if 'TARGET_ADDRESS' in os.environ:
+	    target = os.environ['TARGET_ADDRESS']
 	print ('Sending data to ..',target)
         loop = asyncio.get_event_loop()
         futures = [
