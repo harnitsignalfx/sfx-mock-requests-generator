@@ -1,0 +1,15 @@
+{
+    "family": "mock-webrequests",
+    "containerDefinitions": [
+        {
+            "image": "harnit/mock-requests-generator:v%BUILD_NUMBER%",
+            "name": "sfx-mock-webrequest-generator",
+            "cpu": 1,
+            "memory": 100,
+            "essential": true,
+            "environment": [
+            	{ "name" : "TARGET_ADDRESS", "value" : "%TARGET_ADDRESS%" }
+            ]
+        }
+    ]
+}
