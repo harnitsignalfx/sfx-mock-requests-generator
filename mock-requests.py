@@ -37,7 +37,7 @@ async def main():
         ]
         for response in await asyncio.gather(*futures):
             print (response.text)
-	    counter.inc()
+            counter.inc()
 while True:
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
